@@ -11,7 +11,7 @@ export const FormikInput = ({name, ...props}) => {
             value={field.value}
             onChangeText={value => helpers.setValue(value)}
             {...props}/>
-            {meta.error && <Text style={{color: 'red'}}>{meta.error}</Text>}
+            {meta.error && <Text style={{color: 'red', marginStart: 55}}>{meta.error}</Text>}
         </>
 
     )

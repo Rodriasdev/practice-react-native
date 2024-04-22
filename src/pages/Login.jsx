@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button, Pressable } from "react-native";
 import { Formik } from "formik";
 import { FormikInput } from "../components/FormikInput";
 import { loginValidationSchema } from "../schemas/loginSchema";
@@ -10,17 +10,6 @@ export const Login = () => {
         email: '',
         password: ''
     }
-
-    // const validator = values => {
-    //     const errors = {}
-
-    //     if(!values.email){
-    //         errors.email = 'Email is required'
-    //     } else if (!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(values.email)) {
-    //         errors.password = 'The email not is email'
-    //     }
-    //     return errors
-    // }
 
     return (
         <Formik validationSchema={loginValidationSchema} initialValues={InitialValue} onSubmit={(v) => setStateLogin(true)}>
@@ -34,7 +23,7 @@ export const Login = () => {
                             <Text style={styles.Text}>Password</Text>
                             <FormikInput secureTextEntry name='password' style={styles.TextInput}/>
                             <View style={styles.Button}>
-                                <Button onPress={handleSubmit} title="Login"/>
+                                <Button color='black' onPress={handleSubmit} title="Login"/>
                             </View>
                             {stateLogin && <Text style={styles.login}>login successful</Text>}
                         </View>
@@ -70,17 +59,16 @@ const styles = StyleSheet.create({
         marginStart: 55
     },
     Button: {
-        borderRadius: 100,
         alignSelf: 'center',
-        marginVertical: 50
+        marginVertical: 50,
+        borderRadius: 50
     },
     login: {
         color: 'white',
         alignSelf: 'center',
         borderWidth: 1,
-        backgroundColor: 'green',
-        marginTop: 10,
-        padding: 5,
-        borderRadius: 10
+        backgroundColor: 'black',
+        marginVertical: 20,
+        padding: 5
     }
 })

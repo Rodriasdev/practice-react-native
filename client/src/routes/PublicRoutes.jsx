@@ -8,8 +8,8 @@ export const PublicRoutes = () => {
         <NativeRouter>
             <AppBar/>
             <Routes>
-                <Route path="/" exact element={<Login/>}/>
-                <Route path="/account" exact element={<Account/>}/>
+                <Route path="/login" exact element={<Login/>}/>
+                <Route path="/" exact element={<Account/>}/>
             </Routes>
         </NativeRouter>
     )

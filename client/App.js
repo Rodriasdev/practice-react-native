@@ -1,9 +1,9 @@
-import { PublicRoutes } from './src/routes/PublicRoutes.jsx';
+import { AppRoutes } from "./src/routes/AppRoutes.jsx"
 
 export default function App() {
   return (
     <>
-      <PublicRoutes/>
+      <AppRoutes/>
     </>
   )
 }

@@ -7,10 +7,10 @@ export const AppBar = () => {
         <View style={styles.container}>
             <StatusBar/>
             <Link to='/'>
-                <Text>Login</Text>
-            </Link>
-            <Link to='/account'>
                 <Text>Account</Text>
+            </Link>
+            <Link to='/login'>
+                <Text>Login</Text>
             </Link>
         </View>
     )

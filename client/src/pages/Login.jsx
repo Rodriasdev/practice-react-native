@@ -1,11 +1,10 @@
-import { View, Text, StyleSheet, Button, Pressable } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import { Formik } from "formik";
 import { FormikInput } from "../components/FormikInput";
 import { loginValidationSchema } from "../schemas/loginSchema";
-import { useState } from "react";
 
 export const Login = () => {
-    const [stateLogin, setStateLogin] = useState(false)
+
     const InitialValue = {
         email: '',
         password: ''
@@ -25,7 +24,7 @@ export const Login = () => {
                             <View style={styles.Button}>
                                 <Button color='black' onPress={handleSubmit} title="Login"/>
                             </View>
-                            {stateLogin && <Text style={styles.login}>login successful</Text>}
+
                         </View>
                     </View>
                 )
@@ -36,7 +35,7 @@ export const Login = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 150
+        marginTop: 100
     },
     BoxLogin: {
         backgroundColor: 'grey',
@@ -62,13 +61,5 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginVertical: 50,
         borderRadius: 50
-    },
-    login: {
-        color: 'white',
-        alignSelf: 'center',
-        borderWidth: 1,
-        backgroundColor: 'black',
-        marginVertical: 20,
-        padding: 5
     }
 })

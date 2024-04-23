@@ -1,5 +1,5 @@
 import { NativeRouter, Route, Routes } from "react-router-native";
-import { Account } from "../pages/Account.jsx";
+import { Register } from "../pages/Register.jsx";
 import { Login } from "../pages/Login.jsx";
 import { AppBar } from "../components/AppBar.jsx";
 
@@ -9,7 +9,7 @@ export const PublicRoutes = () => {
             <AppBar/>
             <Routes>
                 <Route path="/login" exact element={<Login/>}/>
-                <Route path="/" exact element={<Account/>}/>
+                <Route path="/" exact element={<Register/>}/>
             </Routes>
         </NativeRouter>
     )

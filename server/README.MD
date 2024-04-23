@@ -1,0 +1,1 @@
+#pip install flask mysqlclient python-dotenv

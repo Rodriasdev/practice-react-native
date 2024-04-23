@@ -1,1 +1,1 @@
-#pip install flask mysqlclient python-dotenv
+#pip install flask mysqlclient python-decouple

@@ -1,14 +1,14 @@
 from flask import Flask
-from config import config
+from db import connectdb
+import MySQLdb
 
 app = Flask(__name__)
+app.debug = True
 
-class DevelopmentConfig:
-    DEBUG = True
+cursor,db = connectdb()
 
-app.config.from_object(config['development'])
 
-@app.route('/')
+@app.route('/user-create')
 def index():
     return 'a'
 

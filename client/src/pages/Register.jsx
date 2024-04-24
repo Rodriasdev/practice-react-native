@@ -2,6 +2,8 @@ import {View,Text, StyleSheet, Button} from 'react-native'
 import { FormikInput } from '../components/FormikInput.jsx'
 import { Formik } from 'formik'
 import { registerValidationSchema } from '../schemas/registerSchema.js'
+import { createUser } from '../api/api.js'
+
 export const Register = () => {
 
     const initialValues = {
@@ -10,8 +12,13 @@ export const Register = () => {
         password: ''
     }
 
+    const registeUser = async (values) => {
+        const data = await createUser(values)
+        console.log(data);
+    }
+
     return (
-        <Formik validationSchema={registerValidationSchema} initialValues={initialValues}>
+        <Formik validationSchema={registerValidationSchema} initialValues={initialValues} onSubmit={registeUser}>
             {({handleSubmit}) => {
                 return (
                     <View style={styles.container}>

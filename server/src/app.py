@@ -30,10 +30,10 @@ def insert_user():
         except MySQLdb.error as e:
             print(e)
             db.rollback()
-            return jsonify({'error':'error al procesar la solicitud'}), 500
+            return jsonify({'error: error a process the request'}), 500
 
     else:
-        return jsonify({'error': 'Método no permitido'}), 405
+        return jsonify({'error: method not permitted'}), 405
 
 
 @app.route('/auth-user', methods=['PUT'])
@@ -55,14 +55,14 @@ def auth_user():
                     'password': user[3]
                 }), 200
             else:
-                return jsonify({'error': 'Usuario no encontrado'}), 404
+                return jsonify({'error: user not found'}), 404
 
         except MySQLdb.Error as e:
             print(e)
-            return jsonify({'error': 'Error al procesar la solicitud'}), 500
+            return jsonify({'error: error a process the request'}), 500
 
     else:
-        return jsonify({'error': 'Método no permitido'}), 405
+        return jsonify({'error: method not permitted'}), 405
 
 
 if __name__ == '__main__':

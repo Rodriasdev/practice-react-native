@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Button } from "react-native";
 import { Formik } from "formik";
 import { FormikInput } from "../components/FormikInput";
 import { loginValidationSchema } from "../schemas/loginSchema";
-
+import { AppBar } from "../components/AppBar";
 export const Login = () => {
 
     const InitialValue = {
@@ -11,25 +11,28 @@ export const Login = () => {
     }
 
     return (
-        <Formik validationSchema={loginValidationSchema} initialValues={InitialValue} onSubmit={(v) => setStateLogin(true)}>
-            {({handleSubmit}) => {
-                return(
-                    <View style={styles.container}>
-                        <View style={styles.BoxLogin}>
-                            <Text style={styles.title}>Log in</Text>
-                            <Text style={styles.Text}>Email</Text>
-                            <FormikInput name='email' style={styles.TextInput}/>
-                            <Text style={styles.Text}>Password</Text>
-                            <FormikInput secureTextEntry name='password' style={styles.TextInput}/>
-                            <View style={styles.Button}>
-                                <Button color='black' onPress={handleSubmit} title="Login"/>
-                            </View>
+        <>
+            <AppBar/>
+            <Formik validationSchema={loginValidationSchema} initialValues={InitialValue} onSubmit={(v) => setStateLogin(true)}>
+                {({handleSubmit}) => {
+                    return(
+                        <View style={styles.container}>
+                            <View style={styles.BoxLogin}>
+                                <Text style={styles.title}>Log in</Text>
+                                <Text style={styles.Text}>Email</Text>
+                                <FormikInput name='email' style={styles.TextInput}/>
+                                <Text style={styles.Text}>Password</Text>
+                                <FormikInput secureTextEntry name='password' style={styles.TextInput}/>
+                                <View style={styles.Button}>
+                                    <Button color='black' onPress={handleSubmit} title="Login"/>
+                                </View>
 
+                            </View>
                         </View>
-                    </View>
-                )
-            }}
-        </Formik>
+                    )
+                }}
+            </Formik>
+        </>
     )
 }
 

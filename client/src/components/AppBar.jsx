@@ -1,20 +1,16 @@
 import React from "react";
-import { View, Text, StatusBar, StyleSheet } from "react-native";
-import { Link } from "react-router-native";
-import { useNavigate } from "react-router-native";
+import { View, StatusBar, StyleSheet, Button } from "react-native"; // Corregido aquí
+import { useNavigation } from "@react-navigation/native";
 
 export const AppBar = () => {
+    const navigation = useNavigation()
 
     return(
         <View style={styles.container}>
             <StatusBar/>
-            <Link to='/'>
-                <Text style={styles.Text}>Register</Text>
-            </Link>
+            <Button title="Register" onPress={() =>  navigation.navigate('register')}/>
             <View style={{borderWidth: 1}}/>
-            <Link to='/login'>
-                <Text style={styles.Text}>Login</Text>
-            </Link>
+            <Button title="Login" onPress={() => navigation.navigate('login')}/>
         </View>
     )
 }
@@ -28,7 +24,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'grey',
         padding: 10
     },
-    Text: {
+    text: {
         fontSize: 20
     }
 })

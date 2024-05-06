@@ -3,7 +3,7 @@ import { FormikInput } from '../components/FormikInput.jsx'
 import { Formik } from 'formik'
 import { registerValidationSchema } from '../schemas/registerSchema.js'
 import { createUser } from '../api/api.js'
-
+import { AppBar } from '../components/AppBar.jsx'
 
 export const Register = () => {
 
@@ -19,25 +19,27 @@ export const Register = () => {
     }
 
     return (
-        <Formik validationSchema={registerValidationSchema} initialValues={initialValues} onSubmit={registeUser}>
-            {({handleSubmit}) => {
-                return (
-                    <View style={styles.container}>
-                    <Text style={styles.title}>Register</Text>
-                    <Text style={styles.Text}>Username</Text>
-                    <FormikInput style={styles.textInput} name='username'/>
-                    <Text style={styles.Text}>Email</Text>
-                    <FormikInput style={styles.textInput} name='email'/>
-                    <Text style={styles.Text}>Password</Text>
-                    <FormikInput style={styles.textInput} name='password'/>
-                    <View style={styles.Button}>
-                        <Button color='black' onPress={handleSubmit} title="Send"/>
+        <>
+            <AppBar/>
+            <Formik validationSchema={registerValidationSchema} initialValues={initialValues} onSubmit={registeUser}>
+                {({handleSubmit}) => {
+                    return (
+                        <View style={styles.container}>
+                        <Text style={styles.title}>Register</Text>
+                        <Text style={styles.Text}>Username</Text>
+                        <FormikInput style={styles.textInput} name='username'/>
+                        <Text style={styles.Text}>Email</Text>
+                        <FormikInput style={styles.textInput} name='email'/>
+                        <Text style={styles.Text}>Password</Text>
+                        <FormikInput style={styles.textInput} name='password'/>
+                        <View style={styles.Button}>
+                            <Button color='black' onPress={handleSubmit} title="Send"/>
+                        </View>
                     </View>
-                </View>
-                )
-            }}
-        </Formik>
-
+                    )
+                }}
+            </Formik>
+        </>
     )
 }
 

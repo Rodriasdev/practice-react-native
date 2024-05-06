@@ -2,6 +2,9 @@ import {View,Text, StyleSheet, Button} from 'react-native'
 import { FormikInput } from '../components/FormikInput.jsx'
 import { Formik } from 'formik'
 import { registerValidationSchema } from '../schemas/registerSchema.js'
+import { createUser } from '../api/api.js'
+
+
 export const Register = () => {
 
     const initialValues = {
@@ -10,12 +13,17 @@ export const Register = () => {
         password: ''
     }
 
+    const registeUser = async (values) => {
+        const data = await createUser(values)
+        console.log(data);
+    }
+
     return (
-        <Formik validationSchema={registerValidationSchema} initialValues={initialValues}>
+        <Formik validationSchema={registerValidationSchema} initialValues={initialValues} onSubmit={registeUser}>
             {({handleSubmit}) => {
                 return (
                     <View style={styles.container}>
-                    <Text style={{fontSize: 20, alignSelf: 'center', color: 'white'}}>Register</Text>
+                    <Text style={styles.title}>Register</Text>
                     <Text style={styles.Text}>Username</Text>
                     <FormikInput style={styles.textInput} name='username'/>
                     <Text style={styles.Text}>Email</Text>
@@ -23,7 +31,7 @@ export const Register = () => {
                     <Text style={styles.Text}>Password</Text>
                     <FormikInput style={styles.textInput} name='password'/>
                     <View style={styles.Button}>
-                        <Button color='black' onPress={handleSubmit} title="Register"/>
+                        <Button color='black' onPress={handleSubmit} title="Send"/>
                     </View>
                 </View>
                 )
@@ -60,4 +68,10 @@ const styles = StyleSheet.create({
         marginVertical: 50,
         borderRadius: 50
     },
+    title: {
+        fontSize: 20, 
+        textAlign: 'center',
+        marginBottom:50,
+        marginTop: 20
+    }
 })

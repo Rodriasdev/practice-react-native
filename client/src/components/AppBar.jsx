@@ -7,10 +7,11 @@ export const AppBar = () => {
         <View style={styles.container}>
             <StatusBar/>
             <Link to='/'>
-                <Text>Register</Text>
+                <Text style={styles.Text}>Register</Text>
             </Link>
+            <View style={{borderWidth: 1}}/>
             <Link to='/login'>
-                <Text>Login</Text>
+                <Text style={styles.Text}>Login</Text>
             </Link>
         </View>
     )
@@ -19,9 +20,13 @@ export const AppBar = () => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        marginTop: 5,
         marginBottom: 10,
         justifyContent: 'space-around',
-        fontSize: 10
+        fontSize: 10,
+        backgroundColor: 'grey',
+        padding: 10
+    },
+    Text: {
+        fontSize: 20
     }
 })

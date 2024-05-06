@@ -16,7 +16,7 @@ export const Login = () => {
                 return(
                     <View style={styles.container}>
                         <View style={styles.BoxLogin}>
-                            <Text style={{fontSize: 20, color: 'white', textAlign: 'center',marginBottom:50,}}>Log in</Text>
+                            <Text style={styles.title}>Log in</Text>
                             <Text style={styles.Text}>Email</Text>
                             <FormikInput name='email' style={styles.TextInput}/>
                             <Text style={styles.Text}>Password</Text>
@@ -61,5 +61,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginVertical: 50,
         borderRadius: 50
+    },
+    title: {
+        fontSize: 20, 
+        textAlign: 'center',
+        marginBottom:50,
+        marginTop: 20
     }
 })

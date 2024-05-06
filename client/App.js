@@ -1,9 +1,9 @@
-import { AppRoutes } from "./src/routes/AppRoutes.jsx"
+import { Login } from "./src/pages/Login"
 
 export default function App() {
   return (
     <>
-      <AppRoutes/>
+
     </>
   )
 }

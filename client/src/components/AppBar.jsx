@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, StatusBar, StyleSheet } from "react-native";
 import { Link } from "react-router-native";
+import { useNavigate } from "react-router-native";
 
 export const AppBar = () => {
+
     return(
         <View style={styles.container}>
             <StatusBar/>

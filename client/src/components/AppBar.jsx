@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StatusBar, StyleSheet, Button } from "react-native"; // Corregido aquí
+import { View, StatusBar, StyleSheet, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export const AppBar = () => {

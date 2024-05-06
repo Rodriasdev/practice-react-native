@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Login } from "./src/pages/Login";
 import { Register } from "./src/pages/Register";
 
-const Stack = createStackNavigator(); // Movido fuera de la función App()
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
